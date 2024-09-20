@@ -83,6 +83,8 @@ header .container {
 }
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .page-nav {
   display: flex;
@@ -127,7 +129,7 @@ header .container {
   padding-bottom: 24px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.menu-item {
+.menu-item:first-child {
   position: relative;
 }
 .menu-item:first-child:after {
@@ -166,6 +168,9 @@ header .container {
     url(../images/people-office.png);
   background-size: cover;
   background-color: #2e2f42;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -209,18 +214,18 @@ h1 {
 }
 .benefits .container {
   display: block;
-  flex-direction: row;
-
   margin-bottom: 0;
-
-  justify-content: space-between;
 }
 .benefits-icon-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f4f4fd;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   padding: 24px 100px;
+  margin-bottom: 8px;
+  height: 112px;
 }
 
 .benefits-list {
@@ -261,21 +266,31 @@ h1 {
   background: #fff;
   border-radius: 0 0 4px 4px;
 }
-.contacts {
+.member-position {
+  margin-bottom: 8px;
+}
+.social-link-list {
   display: flex;
-  justify-content: space-between;
-  margin: 16px 8px;
-  margin-bottom: 0;
+  justify-content: center;
+  gap: 24px;
 }
 .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #4d5ae5;
-  fill: #f4f4fd;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   line-height: 0;
   padding: 12px 12px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.memeber-social-link:hover {
+.social-link-icon {
+  fill: #f4f4fd;
+}
+.social-link:hover,
+.social-link:focus {
   background-color: #404bbf;
 }
 .portfolio {
@@ -306,15 +321,13 @@ h1 {
   top: 0;
   width: 100%;
   height: 100%;
-  padding-left: 32px;
-  padding-top: 40px;
-  padding-right: 32px;
-  padding-bottom: 164px;
+  padding: 40px 32px;
   text-align: start;
   color: #f4f4fd;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portf-item:hover .portfolio-overlay p {
   transform: translateY(0%);
@@ -326,6 +339,11 @@ h1 {
 }
 .page-footer {
   background: #2e2f42;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.page-footer .container {
+  display: flex;
 }
 .footer-logo .part-logo {
   color: #f4f4fd;
@@ -345,20 +363,18 @@ h1 {
   color: #fff;
   font-weight: 500;
 }
-.page-footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+
 .footer-list {
   display: flex;
 }
 .footer-social-link {
   padding: 8px 8px;
 }
-.footer-social-link:hover {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: #31d0aa;
 }
-.footer-contacts {
+.social-link-list {
   padding: 0 0;
   margin: 0 0;
   gap: 16px;
